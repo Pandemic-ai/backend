@@ -39,7 +39,7 @@ urlpatterns = [
     path('api/1/', include('Point.api.urls')),
     path('api/1/', include('coronaapi.api.urls')),
     path('api/1/', include('Data.api.urls')),
-    path('api/1/', include('api.urls')),
+    path('api/1/', include('backend.surls')),
 
 
     url(r'^swagger(?P<format>\.json|\.yaml)$',
