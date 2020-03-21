@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import Volunteer, ReportPeople,Country
+from ..models import Volunteer, ReportPeople, Country
 
 
 class VolunteerSerializer(serializers.ModelSerializer):
@@ -15,6 +15,9 @@ class ReportPeopleSerializer(serializers.ModelSerializer):
 
 
 class CountrySerializer(serializers.ModelSerializer):
+    state = serializers.ListField(
+        child=serializers.CharField(), source='state_as_list')
+
     class Meta:
         model = Country
         fields = "__all__"
