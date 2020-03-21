@@ -30,32 +30,6 @@ class ExportCsvMixin:
     export_as_csv.short_description = "Export Selected"
 
 
-# class VenueAdmin(ImportExportModelAdmin, ExportCsvMixin):
-#     list_display = ["pk", 'email', 'user', 'location', 'frequency', 'latitude',
-#                     'longitude']
-#     search_fields = ('location',)
-
-#     fieldsets = (
-#         (None, {
-#             'fields': ('user', 'email',  'location', 'frequency', 'latitude',
-#                        'longitude',)
-#         }),
-#     )
-
-#     actions = ["export_as_csv"]
-
-#     # class Media:
-#     #     if hasattr(settings, 'GOOGLE_MAPS_API_KEY') and settings.GOOGLE_MAPS_API_KEY:
-#     #         css = {
-#     #             'all': ('css/admin/location_picker.css',),
-#     #         }
-#     #         js = (
-#     #             'https://maps.googleapis.com/maps/api/js?key={}'.format(
-#     #                 settings.GOOGLE_MAPS_API_KEY),
-#     #             'js/admin/location_picker.js',
-#     #         )
-
-
 class ProfileAdmin(ImportExportModelAdmin, ExportCsvMixin):
     list_display = ["pk", 'start_hour', 'end_hour', 'country', 'address', 'date', 'place_type', 'latitude',
                     'longitude', 'info']
