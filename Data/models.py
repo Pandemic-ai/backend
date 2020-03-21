@@ -15,6 +15,10 @@ class Volunteer(models.Model):
                             blank=True, null=True, max_length=250)
     address = models.CharField(
         _("Address name of the volunteer"), blank=True, null=True, max_length=250)
+    info = models.CharField(
+        _("Information about youself"), blank=True, null=True, max_length=250)
+    role = models.CharField(
+        _("Volunteer type"), blank=True, null=True, max_length=250)
     date = models.DateField(_("Date of register"),
                             auto_now=False, auto_now_add=False)
 
