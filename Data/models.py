@@ -67,11 +67,11 @@ class Country(models.Model):
         _("Country state code"), blank=True, null=True, max_length=250)
 
     @property
-    def number_list_as_list(self):
-        return [int(x) for x in self.state.split(',')] if self.state else []
+    def state_as_list(self):
+        return [x for x in self.state.split(',')] if self.state else []
 
-    @number_list_as_list.setter
-    def number_list_as_list(self, value):
+    @state_as_list.setter
+    def state_as_list(self, value):
         self.state = ','.join(str(x) for x in value) if value else ''
 
     def __str__(self):
