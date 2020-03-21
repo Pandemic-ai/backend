@@ -42,7 +42,7 @@ class ReportAdmin(ImportExportModelAdmin, ExportCsvMixin):
 
 class CountryAdmin(ImportExportModelAdmin, ExportCsvMixin):
     list_display = ["pk", 'country']
-    search_fields = ('country')
+    search_fields = ('country',)
     actions = ["export_as_csv"]
 
 
