@@ -22,7 +22,7 @@ class Volunt(ListCreateAPIView):
 class Report(ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
     queryset = ReportPeople.objects.all().order_by('-pk')
-    serializer_class = serializers.VolunteerSerializer
+    serializer_class = serializers.ReportPeopleSerializer
     filter_backends = [DjangoFilterBackend]
     filter_fields = {
         'country': ["icontains"],
