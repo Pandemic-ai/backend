@@ -57,9 +57,9 @@ class ExportCsvMixin:
 
 
 class ProfileAdmin(ImportExportModelAdmin, ExportCsvMixin):
-    list_display = ["pk", 'start_hour', 'end_hour', 'location', 'address', 'date', 'place_type', 'latitude',
+    list_display = ["pk", 'start_hour', 'end_hour', 'country', 'address', 'date', 'place_type', 'latitude',
                     'longitude', 'info']
-    search_fields = ('location', 'address', 'date')
+    search_fields = ('location', 'country', 'address', 'date')
 
     actions = ["export_as_csv"]
 
