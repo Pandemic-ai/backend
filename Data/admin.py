@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 from import_export.admin import ImportExportModelAdmin
 import csv
-from .models import Volunteer, ReportPeople
+from .models import Volunteer, ReportPeople, Country
 from django.conf import settings
 
 
@@ -40,5 +40,12 @@ class ReportAdmin(ImportExportModelAdmin, ExportCsvMixin):
     actions = ["export_as_csv"]
 
 
+class CountryAdmin(ImportExportModelAdmin, ExportCsvMixin):
+    list_display = ["pk", 'country']
+    search_fields = ('country')
+    actions = ["export_as_csv"]
+
+
 admin.site.register(Volunteer, VolunteerAdmin)
+admin.site.register(Country, CountryAdmin)
 admin.site.register(ReportPeople, ReportAdmin)
