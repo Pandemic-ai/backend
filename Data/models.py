@@ -20,7 +20,7 @@ class Volunteer(models.Model):
     role = models.CharField(
         _("Volunteer type"), blank=True, null=True, max_length=250)
     date = models.DateField(_("Date of register"),
-                            auto_now=False, auto_now_add=False)
+                            auto_now=False, auto_now_add=False, null=True)
 
     class Meta:
         verbose_name = _("volunteer")
@@ -46,7 +46,7 @@ class ReportPeople(models.Model):
     info = models.CharField(
         _("Information of case deaths, recoveries, critical or other"), blank=True, null=True, max_length=250)
     date = models.DateField(_("Date of register"),
-                            auto_now=False, auto_now_add=False)
+                            auto_now=False, auto_now_add=False, null=True)
     timestamp = models.DateTimeField(
         _("Get Current date and time "), auto_now_add=True)
 
