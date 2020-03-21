@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     path('coronavirus/volunteer/', views.Volunt.as_view()),
     path('coronavirus/report/', views.Report.as_view()),
+    path('country/list/', views.ListCountry.as_view()),
 ]

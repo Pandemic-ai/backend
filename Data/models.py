@@ -56,3 +56,23 @@ class ReportPeople(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Country(models.Model):
+    country = models.CharField(
+        _("Country of Name"), blank=True, null=True, max_length=250)
+    code = models.CharField(
+        _("Country code"), blank=True, null=True, max_length=250)
+    state = models.CharField(
+        _("Country state code"), blank=True, null=True, max_length=250)
+
+    @property
+    def number_list_as_list(self):
+        return [int(x) for x in self.state.split(',')] if self.state else []
+
+    @number_list_as_list.setter
+    def number_list_as_list(self, value):
+        self.state = ','.join(str(x) for x in value) if value else ''
+
+    def __str__(self):
+        return self.country
