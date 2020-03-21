@@ -15,7 +15,8 @@ class Volunt(ListCreateAPIView):
         'country': ["icontains"],
         'city': ["icontains"],
         'address': ["icontains"],
-        'date': ['gte', 'lte', 'exact']
+        'date': ['gte', 'lte', 'exact'],
+        "role": ["icontains"]
     }
 
 
