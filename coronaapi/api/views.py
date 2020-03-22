@@ -24,7 +24,7 @@ class IsSuperUser(IsAdminUser):
 
 class Country(ListAPIView):
     permission_classes = (IsAuthenticated,)
-    queryset = Area.objects.all().order_by('-pk')
+    queryset = Area.objects.all().all()
     serializer_class = serializers.AreaSerializer
     filter_backends = [DjangoFilterBackend]
     filter_fields = {
