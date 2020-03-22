@@ -86,14 +86,14 @@ class Command(BaseCommand):
             Area.objects.update_or_create(
                 lat=micro['lat'],
                 long=micro['long'],
-                country=micro['country'],
+                country=micro['displayName'],
                 displayName=micro['displayName'],
                 main_id=micro['id'],
                 totalConfirmed=micro['totalConfirmed'],
                 totalDeaths=micro['totalDeaths'],
                 totalRecovered=micro['totalRecovered'],
                 defaults={
-                    'country': micro['country'], 'displayName': micro['displayName'], 'main_id': micro['id']},
+                    'main_id': micro['id'], 'displayName': micro['displayName'], 'main_id': micro['id']},
             )
 
 
